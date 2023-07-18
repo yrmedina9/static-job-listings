@@ -1,0 +1,14 @@
+<div [@fadeIn] class="filter__panel" *ngIf="(tags | async)?.length">
+    <div [@fadeIn] class="filter__items" *ngFor="let tag of (tags | async)">
+        <p class="text">
+            {{ tag }}
+        </p>
+        <button class="close" (click)="deleteTag(tag)">
+            <img src="/assets/icon-remove.svg" alt="icon" />
+        </button>
+    </div>
+
+    <button class="clear__button" (click)="removeAll()">
+        Clear
+    </button>
+</div>

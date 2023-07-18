@@ -1,0 +1,11 @@
+<header></header>
+<div class="container">
+  <app-filter-panel></app-filter-panel>
+  <div class="loading" *ngIf="loading">Loading...</div>
+  <div *ngIf="!loading && !errorMessage">
+    <app-job-panel *ngFor="let job of jobs" [job]="job"></app-job-panel>
+  </div>
+  <div class="error" *ngIf="errorMessage && !loading && jobs.length == 0">
+    {{ errorMessage }}
+  </div>
+</div>
